@@ -15,12 +15,16 @@ public class Pen {
 	 * @param a
 	 * @param b
 	 */
-	public static void uhh(String a, String b) {
-		System.out.println(a + b);
+	public static void uhh(String a, String b) throws InterruptedException {
+//		System.out.println(a + b);
+		printWithDelays( a + b ,TimeUnit.MILLISECONDS, 200);
+		System.out.println("");
 	}
 
-	public static PrintStream Ihave(String a) {
-		return System.out.printf("I have a %s.\n", a);
+	public static void Ihave(String a) throws InterruptedException {
+//		return System.out.printf("I have a %s.\n", a);
+		printWithDelays("I have a " + a, TimeUnit.MILLISECONDS, 200);
+		System.out.println("");
 	}
 
 	public static void printWithDelays(String data, TimeUnit unit, long delay)
@@ -31,7 +35,7 @@ public class Pen {
 		}
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		String apple = "Apple",
 				pineapple = "Pineapple",
 				pen = "Pen",
@@ -49,11 +53,6 @@ public class Pen {
 		System.out.println(pineapple + pen);
 		uhh(pp, ap);
 		
-		try {
-			printWithDelays("HELLO", TimeUnit.MILLISECONDS, 200);
-		} catch (InterruptedException ex) {
-			Logger.getLogger(Pen.class.getName()).log(Level.SEVERE, null, ex);
-		}
 
 	}
 
